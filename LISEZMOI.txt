@@ -1,0 +1,39 @@
+COMMENT OUVRIR L'APPLICATION — 3 ÉTAPES
+=========================================
+
+1. TÉLÉCHARGE LE DOSSIER
+   Sur la page GitHub du projet (normandiemotors-hash/compta-concession),
+   clique sur le bouton vert « Code » puis « Download ZIP ».
+   Décompresse le ZIP (double-clic sur le fichier .zip, puis « Extraire tout »
+   sur Windows) dans un dossier facile à retrouver (ex. le Bureau).
+
+2. VÉRIFIE QUE PYTHON EST INSTALLÉ
+   Windows : ouvre « Invite de commandes » et tape : py --version
+   Si une version s'affiche (ex. Python 3.12), passe à l'étape 3.
+   Sinon, installe Python ici : https://www.python.org/downloads/
+   IMPORTANT : pendant l'installation, coche la case « Add Python to PATH ».
+   Mac / Linux : Python est déjà installé (vérifie avec : python3 --version).
+
+3. LANCE L'APPLICATION
+   Double-clique sur :
+     - lancer.bat        (Windows)
+     - lancer.command    (Mac)
+     - lancer.sh         (Linux, dans un terminal : ./lancer.sh)
+   → Le navigateur s'ouvre TOUT SEUL sur l'application.
+   → Au premier lancement, crée ton compte administrateur,
+     puis les comptes de ta famille dans « Comptes famille ».
+
+POUR LA FAMILLE (même Wi-Fi)
+   Sur l'ordinateur principal, lance plutôt :  python3 app.py --host 0.0.0.0
+   Le terminal affiche une adresse du type http://192.168.1.25:8000
+   Les autres membres de la famille ouvrent cette adresse dans leur navigateur.
+   (Uniquement sur votre Wi-Fi domestique de confiance.)
+
+TES DONNÉES / TRANSFERT
+   Toutes les données sont dans UN seul fichier : data/garage.db
+   Pour transférer sur un autre ordinateur : copie ce fichier dans le dossier
+   data/ de l'autre installation (ou copie tout le dossier du logiciel).
+   Dans l'application : « Export & sauvegarde » permet aussi d'exporter en
+   CSV (Excel) ou JSON.
+
+BESOIN D'AIDE ? Voir le fichier README.md pour le détail complet.

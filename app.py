@@ -9,6 +9,8 @@ Usage :
 import argparse
 import os
 import sys
+import threading
+import webbrowser
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
@@ -47,6 +49,9 @@ def main():
             pass
         print("  -> ATTENTION : n'exposez ceci que sur un reseau domestique de confiance (HTTP, pas de HTTPS).")
     print(f"Comptabilite prete sur http://{args.host}:{args.port}  (Ctrl+C pour arreter)")
+    if args.host in ("127.0.0.1", "localhost"):
+        threading.Timer(1.0, lambda: webbrowser.open(f"http://127.0.0.1:{args.port}/")).start()
+        print("Ouverture automatique du navigateur...")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

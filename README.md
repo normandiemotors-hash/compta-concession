@@ -22,7 +22,7 @@ Prérequis : **Python 3.8 ou plus** (`python3 --version` pour vérifier).
 - **macOS** : double-clic sur `lancer.command` (ou `./lancer.sh` dans le Terminal).
 - **Linux** : `./lancer.sh` ou `python3 app.py`.
 
-Puis ouvrez votre navigateur à l'adresse indiquée (par défaut **http://127.0.0.1:8000**).
+Le navigateur s'ouvre **automatiquement** à l'adresse indiquée (par défaut **http://127.0.0.1:8000**). Voir aussi le fichier **`LISEZMOI.txt`** à la racine du projet pour les 3 étapes simples.
 
 Au premier lancement, créez le **compte administrateur** (page « Premier démarrage »), puis connectez-vous. Depuis « Comptes famille », l'admin crée un compte pour chaque membre de la famille.
 
