@@ -1,0 +1,2 @@
+# Aucune dépendance externe : Python 3.8+ (bibliothèque standard uniquement).
+# sqlite3, http.server, hashlib, hmac, secrets sont inclus avec Python.

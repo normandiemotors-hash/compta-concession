@@ -1,0 +1,36 @@
+"""Enregistrement des routes de l'application."""
+from . import pages_admin, pages_core, pages_reports, pages_vehicules
+
+
+def register(router, ctx):
+    r = router.add
+    r("GET", "/", pages_core.page_dashboard)
+    r("GET", "/setup", pages_core.page_setup, "public")
+    r("POST", "/setup", pages_core.post_setup, "public")
+    r("GET", "/login", pages_core.page_login, "public")
+    r("POST", "/login", pages_core.post_login, "public")
+    r("POST", "/logout", pages_core.post_logout)
+    r("GET", "/vehicules", pages_core.page_vehicules)
+    r("GET", "/vehicules/nouveau", pages_core.page_vehicule_new)
+    r("POST", "/vehicules", pages_core.post_vehicule)
+    r("GET", "/vehicules/<id>", pages_vehicules.page_vehicule)
+    r("POST", "/vehicules/<id>/modifier", pages_vehicules.post_modifier)
+    r("POST", "/vehicules/<id>/couts", pages_vehicules.post_cout)
+    r("POST", "/vehicules/<id>/couts/<cid>/supprimer", pages_vehicules.post_cout_suppr, "admin")
+    r("POST", "/vehicules/<id>/vendre", pages_vehicules.post_vendre)
+    r("POST", "/vehicules/<id>/rouvrir", pages_vehicules.post_rouvrir, "admin")
+    r("POST", "/vehicules/<id>/supprimer", pages_vehicules.post_vehicule_suppr, "admin")
+    r("GET", "/depenses", pages_reports.page_depenses)
+    r("POST", "/depenses", pages_reports.post_depense)
+    r("POST", "/depenses/<id>/supprimer", pages_reports.post_depense_suppr, "admin")
+    r("GET", "/rapports", pages_reports.page_rapports)
+    r("GET", "/rapports/fiscal", pages_reports.page_fiscal)
+    r("GET", "/export", pages_reports.page_export)
+    r("GET", "/export/<kind>", pages_reports.get_export)
+    r("POST", "/import", pages_reports.post_import, "admin")
+    r("GET", "/parametres", pages_admin.page_parametres, "admin")
+    r("POST", "/parametres", pages_admin.post_params, "admin")
+    r("GET", "/utilisateurs", pages_admin.page_utilisateurs, "admin")
+    r("POST", "/utilisateurs", pages_admin.post_user, "admin")
+    r("POST", "/utilisateurs/<id>/supprimer", pages_admin.post_user_suppr, "admin")
+    r("GET", "/audit", pages_admin.page_audit, "admin")
